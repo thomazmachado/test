@@ -72,15 +72,15 @@ Upsell.Frame = {
       currentHost += '?'
     }
     var url = currentHost + queryString + "&" + (params.buttonImage !== '' ? 'buttonImage=' + params.buttonImage + '&' : '') + (params.customStyle !== '' ? 'customStyle=' + params.customStyle + '&' : '');
-    var funnel = '<iframe id="hotmart_upsell_iframe" class="hotmart_upsell_iframe" src="' + url + '#{query}" width="#{width}" height="#{height}" frameborder="0" scrolling="no" allowtransparency="true"></iframe>';
+    var funnel = '<iframe id="hotmart_upsell_iframe" class="hotmart_upsell_iframe" src="' + url + '#{query}" width="#{width}" height="#{height}" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>';
 
     return { funnelFrame: funnel };
   },
   content_template : function(params) {
     return { frame : this.urlFunnel(params).funnelFrame }
   },
-  //'<iframe id="hotmart_upsell_iframe" src="' + document.querySelector('script[src$="upsell-window.js"]').getAttribute('src').split('js/widgets/upsell-window.js')[0] + '/widgets/funnel/upsell.html?#{query}" width="#{width}" height="#{height}" frameborder="0" scrolling="no" allowtransparency="true" ></iframe>',
-  //content_template : '<iframe id="hotmart_upsell_iframe" src="//www.hotmart.net.br/widgets/funnel/upsell.html?#{query}" width="#{width}" height="#{height}" frameborder="0" scrolling="no" allowtransparency="true" ></iframe>',
+  //'<iframe id="hotmart_upsell_iframe" src="' + document.querySelector('script[src$="upsell-window.js"]').getAttribute('src').split('js/widgets/upsell-window.js')[0] + '/widgets/funnel/upsell.html?#{query}" width="#{width}" height="#{height}" frameborder="0" scrolling="auto" allowtransparency="true" ></iframe>',
+  //content_template : '<iframe id="hotmart_upsell_iframe" src="//www.hotmart.net.br/widgets/funnel/upsell.html?#{query}" width="#{width}" height="#{height}" frameborder="0" scrolling="auto" allowtransparency="true" ></iframe>',
 
   getBox : function() {
     return document.getElementById("box_hotmart");
